@@ -1,0 +1,31 @@
+@mixin navlink($color) {
+  position: relative;
+  padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: $color;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 00%;
+    height: 3px;
+    bottom: -0.5rem;
+    right: 0;
+    background-color: $color;
+    transition: width 0.3s 0.3s;
+  }
+  &:hover {
+    color: #fff;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+}
